@@ -93,26 +93,28 @@ function sixthQuestion() {
   }
 }
 
-let birthYear = "1997";
-let attempts = 4;
-for (let i = attempts; i > 0; i--) {
-  let guessAge = prompt("What year was I born in?");
-  if (guessAge === birthYear) {
-    alert("You've Got it. I was indeed born in 1997.");
-    break;
-  } else if (guessAge < birthYear) {
-    alert(
-      `Not quite. You\'ve guess is a bit low. you have ${
-        attempts - 1
-      } remaining.`
-    );
-  } else if (guessAge > birthYear) {
-    alert(
-      `Not quite. You\'ve guessed a bit higher. You have ${
-        attempts - 1
-      } remaining.`
-    );
-  } else if ((attempts = 0)) {
-    alert("Sorry. You are out of attempts.");
+function seventhQuestion() {
+  let birthYear = "1997";
+  let attempts = 4;
+  for (let i = attempts; i > 0; i--) {
+    let guessAge = prompt("What year was I born in?");
+    if (guessAge === birthYear) {
+      alert("You've Got it. I was indeed born in 1997.");
+      break;
+    } else if (guessAge < birthYear) {
+      alert(
+        `Not quite. You\'ve guess is a bit low. you have ${
+          attempts - 1
+        } remaining.`
+      );
+    } else if (guessAge > birthYear) {
+      alert(
+        `Not quite. You\'ve guessed a bit higher. You have ${
+          attempts - 1
+        } remaining.`
+      );
+    } else if ((attempts = 0)) {
+      alert("Sorry. You are out of attempts.");
+    }
   }
 }
