@@ -39,15 +39,17 @@ function secondQuestion() {
   }
 }
 
-let bacon = prompt("Do I LOVE BACON?").toLowerCase();
-if (bacon === "yes" || bacon === "y") {
-  alert("OF COURSE I LOVE BACON. It's the best breakfast meal of the day.");
-} else if (bacon === "no" || bacon === "n") {
-  alert("Let me guess, you eat vegan bacon huh?");
-} else {
-  alert(
-    "My guy, we've been through this, you've gotta answer the question with a Yes(Y) or a No(N). This is elementary things Watson."
-  );
+function thirdQuestion() {
+  let bacon = prompt("Do I LOVE BACON?").toLowerCase();
+  if (bacon === "yes" || bacon === "y") {
+    alert("OF COURSE I LOVE BACON. It's the best breakfast meal of the day.");
+  } else if (bacon === "no" || bacon === "n") {
+    alert("Let me guess, you eat vegan bacon huh?");
+  } else {
+    alert(
+      "My guy, we've been through this, you've gotta answer the question with a Yes(Y) or a No(N). This is elementary things Watson."
+    );
+  }
 }
 let rhetorical = prompt(
   "If I could, would I put bacon on everything?"
