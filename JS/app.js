@@ -67,18 +67,21 @@ function fourthQuestion() {
   }
 }
 
-let instrument = prompt("Do I like play the ukelele?").toLowerCase();
-if (instrument === "no" || instrument === "n") {
-  alert(
-    "Correct, I don't play the ukelele. I play the guitar and violin, not the ukelele."
-  );
-} else if (instrument === "yes" || instrument === "y") {
-  alert("Not quite right. I play the guitar and violin, not the ukelele.");
-} else {
-  alert(
-    "My guy, you've gotta be trolling me. There is no way you can't follow simple instructions. Answer the question with a Yes(Y) or a No(N). This is elementary stuf we learn Watson. Elementary!."
-  );
+function fifthQuestion() {
+  let instrument = prompt("Do I like play the ukelele?").toLowerCase();
+  if (instrument === "no" || instrument === "n") {
+    alert(
+      "Correct, I don't play the ukelele. I play the guitar and violin, not the ukelele."
+    );
+  } else if (instrument === "yes" || instrument === "y") {
+    alert("Not quite right. I play the guitar and violin, not the ukelele.");
+  } else {
+    alert(
+      "My guy, you've gotta be trolling me. There is no way you can't follow simple instructions. Answer the question with a Yes(Y) or a No(N). This is elementary stuf we learn Watson. Elementary!."
+    );
+  }
 }
+
 let aboutMe = prompt("Do you wanna know more about me?").toLowerCase();
 if (aboutMe === "yes" || aboutMe === "y") {
   alert("Ok, I guess I can tell you a little about me.");
