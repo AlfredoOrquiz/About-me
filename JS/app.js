@@ -13,14 +13,17 @@ function greeting() {
   );
 }
 
-let washington = prompt("Do I live in Wahington State?").toLowerCase();
-if (washington === "yes" || washington === "y") {
-  alert("Correct, I do live in Washington.");
-} else if (washington === "no" || washington === "n") {
-  alert('The question was, "Do I live in Washington". Try again.');
-} else {
-  alert("Unacceptable answer, you have to answer with a Yes(Y) or a No(N).");
+function firstQuestion() {
+  let washington = prompt("Do I live in Wahington State?").toLowerCase();
+  if (washington === "yes" || washington === "y") {
+    alert("Correct, I do live in Washington.");
+  } else if (washington === "no" || washington === "n") {
+    alert('The question was, "Do I live in Washington". Try again.');
+  } else {
+    alert("Unacceptable answer, you have to answer with a Yes(Y) or a No(N).");
+  }
 }
+
 let chocolate = prompt("Do I LOVE chocolate?").toLowerCase();
 if (chocolate === "yes" || chocolate === "y") {
   alert("You are correct again, I do LOVE chocolate. Who doesn't tho, Right?");
@@ -31,6 +34,7 @@ if (chocolate === "yes" || chocolate === "y") {
 } else {
   alert("My guy, you've gotta answer the question with a Yes(Y) or a No(N).");
 }
+
 let bacon = prompt("Do I LOVE BACON?").toLowerCase();
 if (bacon === "yes" || bacon === "y") {
   alert("OF COURSE I LOVE BACON. It's the best breakfast meal of the day.");
