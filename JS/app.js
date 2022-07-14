@@ -82,14 +82,17 @@ function fifthQuestion() {
   }
 }
 
-let aboutMe = prompt("Do you wanna know more about me?").toLowerCase();
-if (aboutMe === "yes" || aboutMe === "y") {
-  alert("Ok, I guess I can tell you a little about me.");
-} else if (aboutMe === "no" || aboutMe === "n") {
-  alert("To bad, I'm going to anyways.");
-} else {
-  alert("My guy, let's just go now.");
+function sixthQuestion() {
+  let aboutMe = prompt("Do you wanna know more about me?").toLowerCase();
+  if (aboutMe === "yes" || aboutMe === "y") {
+    alert("Ok, I guess I can tell you a little about me.");
+  } else if (aboutMe === "no" || aboutMe === "n") {
+    alert("To bad, I'm going to anyways.");
+  } else {
+    alert("My guy, let's just go now.");
+  }
 }
+
 let birthYear = "1997";
 let attempts = 4;
 for (let i = attempts; i > 0; i--) {
