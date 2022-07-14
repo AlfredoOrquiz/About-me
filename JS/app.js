@@ -24,15 +24,19 @@ function firstQuestion() {
   }
 }
 
-let chocolate = prompt("Do I LOVE chocolate?").toLowerCase();
-if (chocolate === "yes" || chocolate === "y") {
-  alert("You are correct again, I do LOVE chocolate. Who doesn't tho, Right?");
-} else if (chocolate === "no" || chocolate === "n") {
-  alert(
-    "Nope, I do Love chocolate. You should've guessed by the capitalized LOVE."
-  );
-} else {
-  alert("My guy, you've gotta answer the question with a Yes(Y) or a No(N).");
+function secondQuestion() {
+  let chocolate = prompt("Do I LOVE chocolate?").toLowerCase();
+  if (chocolate === "yes" || chocolate === "y") {
+    alert(
+      "You are correct again, I do LOVE chocolate. Who doesn't tho, Right?"
+    );
+  } else if (chocolate === "no" || chocolate === "n") {
+    alert(
+      "Nope, I do Love chocolate. You should've guessed by the capitalized LOVE."
+    );
+  } else {
+    alert("My guy, you've gotta answer the question with a Yes(Y) or a No(N).");
+  }
 }
 
 let bacon = prompt("Do I LOVE BACON?").toLowerCase();
