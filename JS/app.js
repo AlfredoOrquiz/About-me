@@ -51,18 +51,22 @@ function thirdQuestion() {
     );
   }
 }
-let rhetorical = prompt(
-  "If I could, would I put bacon on everything?"
-).toLowerCase();
-if (rhetorical === "yes" || rhetorical === "y") {
-  alert("That was a rhetorical question, of course I would.?");
-} else if (rhetorical === "no" || rhetorical === "n") {
-  alert("Hah, you thought you knew me, but I guess you didn't. Try again.");
-} else {
-  alert(
-    "My guy, you've gotta answer this question with a Yes(Y) or a No(N). Do I need to hold your hand through this Watson?"
-  );
+
+function fourthQuestion() {
+  let rhetorical = prompt(
+    "If I could, would I put bacon on everything?"
+  ).toLowerCase();
+  if (rhetorical === "yes" || rhetorical === "y") {
+    alert("That was a rhetorical question, of course I would.?");
+  } else if (rhetorical === "no" || rhetorical === "n") {
+    alert("Hah, you thought you knew me, but I guess you didn't. Try again.");
+  } else {
+    alert(
+      "My guy, you've gotta answer this question with a Yes(Y) or a No(N). Do I need to hold your hand through this Watson?"
+    );
+  }
 }
+
 let instrument = prompt("Do I like play the ukelele?").toLowerCase();
 if (instrument === "no" || instrument === "n") {
   alert(
