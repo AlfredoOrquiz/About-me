@@ -1,5 +1,6 @@
 "use strict";
 
+var max_count = 5;
 function greeting() {
   let userName = prompt(
     "Hello there, and welcome to my home page. Before we get started, let me ask you a question. What is your name?"
@@ -24,7 +25,10 @@ function bioQuestion() {
       alert(
         "Unacceptable answer, you have to answer with a Yes(Y) or a No(N)."
       );
+      if (--max_count > 0)
+        firstQuestion();
     }
+    console.log("Yes, I do live in Washington.");
   }
 
   function secondQuestion() {
@@ -41,6 +45,8 @@ function bioQuestion() {
       alert(
         "My guy, you've gotta answer the question with a Yes(Y) or a No(N)."
       );
+      if (--max_count > 0)
+        secondQuestion();
     }
   }
 
@@ -54,6 +60,8 @@ function bioQuestion() {
       alert(
         "My guy, we've been through this, you've gotta answer the question with a Yes(Y) or a No(N). This is elementary things Watson."
       );
+      if (--max_count > 0)
+        thirdQuestion
     }
   }
 
@@ -69,6 +77,8 @@ function bioQuestion() {
       alert(
         "My guy, you've gotta answer this question with a Yes(Y) or a No(N). Do I need to hold your hand through this Watson?"
       );
+      if (--max_count > 0)
+        fourthQuestion();
     }
   }
 
@@ -82,8 +92,10 @@ function bioQuestion() {
       alert("Not quite right. I play the guitar and violin, not the ukelele.");
     } else {
       alert(
-        "My guy, you've gotta be trolling me. There is no way you can't follow simple instructions. Answer the question with a Yes(Y) or a No(N). This is elementary stuf we learn Watson. Elementary!."
+        "My guy, you gotta answer with yes (y) or no (n)."
       );
+      if (--max_count > 0)
+        fifthQuestion();
     }
   }
 
@@ -95,6 +107,8 @@ function bioQuestion() {
       alert("To bad, I'm going to anyways.");
     } else {
       alert("My guy, let's just go now.");
+      if (--max_count > 0)
+        sixthQuestion();
     }
   }
   firstQuestion();
@@ -113,7 +127,7 @@ function seventhQuestion() {
     guessAge = prompt("What year was I born in?");
     attempts--;
     if (attempts === 0) {
-      alert("Sorry. You are out of attempts.");
+      alert("Sorry. You are out of attempts. The correct answer is 1997.");
       break;
     }
     if (guessAge === birthYear) {
@@ -130,7 +144,41 @@ function seventhQuestion() {
     }
   }
 }
+function eightQuestion() {
+  let favSong = [
+    "kings never die", 
+    "survival", 
+    "drop the world", 
+    "echo",
+    "take from me",
+    "i need a doctor",
+    "growing up",
+    "remember the name",
+    "amigos",
+    "colapso"
+  ];
+  let songAttempts = 6;
+  while (songAttempts > 0) {
+    let songAnswer = prompt(`What is my favorite song? You have ${songAttempts} attempts left`).toLowerCase();
+    songAttempts--;
+    let isCorrect = false;
+    for (let i = 0; i < favSong.length; i++) {
+      if (songAnswer === favSong[i]) {
+        alert(`You are right! ${songAnswer} is my favorite song.`);
+        score++;
+        isCorrect = true;
+      } 
+      if (!isCorrect) {
+        alert(`Sorry, you are incorrect. ${songAnswer} is not my favorite song`);
+      } else {
+        break;
+      }
+    }
+  }
+}
+
 greeting();
 bioQuestion();
 seventhQuestion();
-alert("end of test");
+eightQuestion();
+alert("End of test.");

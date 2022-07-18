@@ -1,18 +1,25 @@
 body {
   background-color: #E6FFF1;
+  color: black;
   font-family: sans-serif;
   padding: 2.25% .75%;
 }
 h1 {
+  color: #4D9999;
   font-size: xx-large;
   font-weight: bolder;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-style: italic;
 }
 h2 {
+  color: #4D9999;
   font-size: x-large;
   font-weight: bold;
 }
 h3 {
+  color: #4D9999;
   font-weight: bold;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 .Header {
   text-align: center;
