@@ -1,5 +1,5 @@
 "use strict";
-
+var score = 0;
 var max_count = 5;
 function greeting() {
   let userName = prompt(
@@ -10,7 +10,7 @@ function greeting() {
     "Before we get started, read this little intro about me. And pay attention, for I have a little quiz for you after my little presentation."
   );
   alert(
-    "My name is Alfredo Orquiz. Born in the US and raised in Mexico. I moved here to live in Seattle on February 18, 2022. I have a bit of a sweet tooth, for I like to eat jasmine rice with syrup for breakfast, and I LOVE chocolate. My favorite foods are sushi, tacos, and bacon. I LOVE bacon so much that if I could, I would put it on EVERYTHING. For my hobbies, I play the guitar, the violin, and the flute, go for walks, drive around, learn new languages, anything to keep me active and to learn."
+    "My name is Alfredo Orquiz. Born in the US in 1997 and raised in Mexico. I moved here to live in Seattle on February 18, 2022. My favorite song is Kings never die, echo, drop the world, or survival by Eminem. I have a bit of a sweet tooth, for I like to eat jasmine rice with syrup for breakfast, and I LOVE chocolate. My favorite foods are sushi, tacos, and bacon. I LOVE bacon so much that if I could, I would put it on EVERYTHING. For my hobbies, I play the guitar, the violin, and the flute, go for walks, drive around, learn new languages, anything to keep me active and to learn."
   );
 }
 
@@ -19,6 +19,8 @@ function bioQuestion() {
     let washington = prompt("Do I live in Wahington State?").toLowerCase();
     if (washington === "yes" || washington === "y") {
       alert("Correct, I do live in Washington.");
+      console.log("Correct, I do live in Washington.");
+      score++;
     } else if (washington === "no" || washington === "n") {
       alert('The question was, "Do I live in Washington". Try again.');
     } else {
@@ -37,6 +39,8 @@ function bioQuestion() {
       alert(
         "You are correct again, I do LOVE chocolate. Who doesn't tho, Right?"
       );
+      score++;
+      console.log("You are correct again, I do LOVE chocolate. Who doesn't tho, Right?");
     } else if (chocolate === "no" || chocolate === "n") {
       alert(
         "Nope, I do Love chocolate. You should've guessed by the capitalized LOVE."
@@ -54,6 +58,8 @@ function bioQuestion() {
     let bacon = prompt("Do I LOVE BACON?").toLowerCase();
     if (bacon === "yes" || bacon === "y") {
       alert("OF COURSE I LOVE BACON. It's the best breakfast meal of the day.");
+      score++;
+      console.log("You got the answer correct");
     } else if (bacon === "no" || bacon === "n") {
       alert("Let me guess, you eat vegan bacon huh?");
     } else {
@@ -71,6 +77,8 @@ function bioQuestion() {
     ).toLowerCase();
     if (rhetorical === "yes" || rhetorical === "y") {
       alert("That was a rhetorical question, of course I would.?");
+      console.log("You got the answer correct");
+      score++;
     } else if (rhetorical === "no" || rhetorical === "n") {
       alert("Hah, you thought you knew me, but I guess you didn't. Try again.");
     } else {
@@ -88,6 +96,8 @@ function bioQuestion() {
       alert(
         "Correct, I don't play the ukelele. I play the guitar and violin, not the ukelele."
       );
+      score++;
+      console.log("You got the answer correct");
     } else if (instrument === "yes" || instrument === "y") {
       alert("Not quite right. I play the guitar and violin, not the ukelele.");
     } else {
@@ -99,27 +109,14 @@ function bioQuestion() {
     }
   }
 
-  function sixthQuestion() {
-    let aboutMe = prompt("Do you wanna know more about me?").toLowerCase();
-    if (aboutMe === "yes" || aboutMe === "y") {
-      alert("Ok, I guess I can tell you a little about me.");
-    } else if (aboutMe === "no" || aboutMe === "n") {
-      alert("To bad, I'm going to anyways.");
-    } else {
-      alert("My guy, let's just go now.");
-      if (--max_count > 0)
-        sixthQuestion();
-    }
-  }
   firstQuestion();
   secondQuestion();
   thirdQuestion();
   fourthQuestion();
   fifthQuestion();
-  sixthQuestion();
 }
 
-function seventhQuestion() {
+function sixthQuestion() {
   let birthYear = "1997";
   let attempts = 4;
   let guessAge;
@@ -132,6 +129,8 @@ function seventhQuestion() {
     }
     if (guessAge === birthYear) {
       alert("You’ve Got it. I was indeed born in 1997.");
+      console.log("You got the answer correct");
+      score++;
       break;
     } else if (guessAge < birthYear) {
       alert(
@@ -144,41 +143,36 @@ function seventhQuestion() {
     }
   }
 }
-function eightQuestion() {
+function seventhQuestion() {
   let favSong = [
     "kings never die", 
     "survival", 
     "drop the world", 
-    "echo",
-    "take from me",
-    "i need a doctor",
-    "growing up",
-    "remember the name",
-    "amigos",
-    "colapso"
+    "echo"
   ];
   let songAttempts = 6;
-  while (songAttempts > 0) {
+  while (songAttempts) {
     let songAnswer = prompt(`What is my favorite song? You have ${songAttempts} attempts left`).toLowerCase();
     songAttempts--;
     let isCorrect = false;
-    for (let i = 0; i < favSong.length; i++) {
-      if (songAnswer === favSong[i]) {
-        alert(`You are right! ${songAnswer} is my favorite song.`);
-        score++;
-        isCorrect = true;
-      } 
-      if (!isCorrect) {
-        alert(`Sorry, you are incorrect. ${songAnswer} is not my favorite song`);
-      } else {
-        break;
+    if (songAttempts === 0) {
+      alert(`Sorry, you are incorrect. ${songAnswer} is not my favorite song`);
+    } else if ((songAnswer === favSong[0]) || (songAnswer === favSong[1]) || (songAnswer === favSong[2]) || (songAnswer === favSong[3])) {
+      alert(`You are right! ${songAnswer} is my favorite song.`);
+      console.log("You got the answer correct");
+      score++;
+      isCorrect = true;
+      break;
+    }
+      else {
+        alert ("You're wrong.");
       }
     }
   }
-}
 
 greeting();
 bioQuestion();
+sixthQuestion();
 seventhQuestion();
-eightQuestion();
+alert(`You got ${score} answers right.`);
 alert("End of test.");
